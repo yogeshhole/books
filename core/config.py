@@ -1,0 +1,19 @@
+from environs import Env
+
+env = Env()
+env.read_env()
+
+PROJECT_NAME = env.str("PROJECT_NAME", "Books")
+
+MONGO_MIN_CONNECTIONS_COUNT = env.int('MIN_CONNECTIONS_COUNT', 10)
+MONGO_MAX_CONNECTIONS_COUNT = env.int('MAX_CONNECTIONS_COUNT', 10)
+MONGO_MAX_IDLE_TIME_IN_MINUTE = env.int('MONGO_MAX_IDLE_TIME_IN_MINUTE', 10)
+MONGO_RETRY_ATTEMPTS = env.int('MONGO_RETRY_ATTEMPTS', 3)
+
+MONGO_HOST = env.str('MONGO_HOST', 'localhost')
+MONGO_PORT = env.int('MONGO_PORT', 27017)
+MONGO_USER = env.str('MONGO_USER', 'test')
+MONGO_PASS = env.str('MONGO_PASSWORD', 'test')
+MONGO_DB = env.str('MONGO_DB', 'test')
+
+MONGODB_URL = f'mongodb://{MONGO_USER}:{MONGO_PASS}@{MONGO_HOST}:{MONGO_PORT}/{MONGO_DB}?authSource=admin'
