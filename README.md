@@ -9,7 +9,7 @@ Main features:
 4. Shipment of the books will be done by third paty. 
 
 ---
-####Overview:
+#### Overview:
 The application is divided into Microservices. 
 There are 2 services
 1. BookStore - Provides the APIs where Books (available products) can be fetched from the database. 
@@ -21,13 +21,13 @@ There are 2 services
    - Place the order for selected products in the cart. Once order is placed, the products will be removed from the cart.
    - Created sample methods for shipment tracking using 3rd party services.
    
-Apart from this, there is a Core library which contains contains common utilities needed across most services such as:
+Apart from this, there is a Core library which contains common utilities needed across most services such as:
 * mongoDB connection
 * requests
 * exception handlers
 
 ---
-####Technology Stack:
+#### Technology Stack:
 * Language - Python 3.7
 * REST API Framework - FastAPI
 * Database - MongoDB
