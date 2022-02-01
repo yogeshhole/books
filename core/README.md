@@ -1,30 +1,11 @@
-# Calendar Core
+# Core
 
-The calendar core contains common utilities needed across most services such as:
-* user JWT auth
+The core contains common utilities needed across most services such as:
 * mongoDB connection
 * requests
 * exception handlers
-* date functions
 
-Calendar core will already be installed as a dependency (via pipenv) on the services that need it.
-
-(REQUIRED) setup SSH keys locally:
-```
-1 generate an SSH key pair (will add v2_calendar to ~/.ssh):
-    ssh-keygen -t rsa -b 4096 -m PEM -P "" -f ~/.ssh/v2_calendar.key -C "system@calendar.com"
-
-2 Add to your shell startup script (.bashrc or .zshrc):
-    export CALENDAR_AUTH_PRIVATE_KEY=$(cat ~/.ssh/v2_calendar.key)
-    export CALENDAR_AUTH_PUBLIC_KEY=$(cat ~/.ssh/v2_calendar.key.pub)
-
-3 You will likely need to restart your IDE (pycharm, vscode) pick up the updated env changes
-```
----
-
-(OPTIONAL) Attach v2-calendar-core in Pycharm:
-1. open a service
-1. open v2-calendor-core and select `attach`
+Core will already be installed as a dependency (via pipenv) on the services that need it.
 
 ---
 
@@ -51,8 +32,8 @@ $ mongo
 # create user calendar as a superuser:
 mongo> use admin
 mongo> db.createUser({
-  user: "calendar",
-  pwd: "calendar",
+  user: "test",
+  pwd: "test",
   roles: ["root"]
 })
 
@@ -63,6 +44,3 @@ brew services restart mongodb-community
 ```
 
 ---
-
-#### pipenv quickstart:
-https://dev.to/smirza/quickstart-guide-on-pipenv-python-packaging-tool-2ie4
