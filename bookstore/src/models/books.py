@@ -1,31 +1,27 @@
 from typing import Optional, List
 
-from pydantic import BaseModel
-
+from pydantic import BaseModel, EmailStr
 from src.models.common import TimestampMixIn
 
+
+class Author(BaseModel):
+    name: str
+    email: EmailStr
+    description: str
 
 class Book(BaseModel):
     title: str
     isbn: str
     genre: str
-    type: int
+    type: str
     publication_year: int
     price: int
     ebook: Optional[str]
+    authors: List[Author]
 
 
 class BookIn(TimestampMixIn):
     pass
-
-
-class BookInUpdate(BaseModel):
-    title: Optional[str]
-    genre: Optional[str]
-    type: Optional[str]
-    publication_year: Optional[int]
-    price: Optional[int]
-    ebook: Optional[str]
 
 
 class BookInDB(BookIn):

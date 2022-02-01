@@ -40,8 +40,8 @@ def health_check():
 
 
 # ROUTERS
-app.include_router(orders_router, prefix='/orders/', tags=['orders'],
+app.include_router(orders_router, prefix='/orders', tags=['orders'],
                    dependencies=[Depends(get_database)])
 
-app.include_router(carts_router, prefix='/carts/', tags=['cart'],
+app.include_router(carts_router, prefix='/carts', tags=['cart'],
                    dependencies=[Depends(get_database)])

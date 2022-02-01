@@ -29,7 +29,7 @@ class Order(BaseModel):
 
 
 class Orders(BaseModel):
-    orders = List[Order]
+    orders: List[Order]
 
 
 class CartItem(BaseModel):
